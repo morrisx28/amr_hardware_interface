@@ -42,21 +42,16 @@ public:
     ThreadPtr lowStatePuberThreadPtr;
 
 
-    int num_motor_ = 4;
+    int num_motor_ = 8;
     int dim_motor_sensor_ = 0;
 
     int set_zero_ = false;
-    // vector<uint16_t> can_id_list{0x01, 0x02, 0x03, 0x04, 0x05, 0x06, 0x07, 0x08}; // L_hip L_thigh L_calf L_wheel R_hip R_thigh R_calf R_wheel
-    // vector<uint16_t> mst_id_list{0x11, 0x12, 0x13, 0x14, 0x15, 0x16, 0x17, 0x18};
-    // vector<int> motor_type{damiao::DM8006, damiao::DM8006, damiao::DM8009, damiao::DM6006, damiao::DM8006, damiao::DM8006, damiao::DM8009, damiao::DM6006};
-    vector<uint16_t> can_id_list{0x05, 0x06, 0x07, 0x08}; // L_hip L_thigh L_calf L_wheel R_hip R_thigh R_calf R_wheel
-    vector<uint16_t> mst_id_list{0x15, 0x16, 0x17, 0x18};
-    vector<int> motor_type{damiao::DM6006, damiao::DM6006, damiao::DM6006, damiao::DM6006, damiao::DM6006};
+    vector<uint16_t> can_id_list{0x01, 0x02, 0x03, 0x04, 0x05, 0x06, 0x07, 0x08}; // FL_steering FR_steering RL_steering RR_steering FL_wheel FR_wheel RL_wheel RR_wheel
+    vector<uint16_t> mst_id_list{0x11, 0x12, 0x13, 0x14, 0x15, 0x16, 0x17, 0x18};
+    vector<int> motor_type{damiao::DM8009, damiao::DM8009, damiao::DM8009, damiao::DM8009, damiao::DM6006, damiao::DM6006, damiao::DM6006, damiao::DM6006};
     
-    // vector<double> motor_offset{0.698, -1.919, 3.314, 0, -0.698, 1.919, -3.314, 0};
-    // vector<double> direction{-1.0, 1.0, 1.0, 1.0, -1.0, -1.0, -1.0, -1.0};
-    vector<double> motor_offset{0, 0, 0, 0};
-    vector<double> direction{1.0, 1.0, 1.0, 1.0};
+    vector<double> motor_offset{0, 0, 0, 0, 0, 0, 0, 0};
+    vector<double> direction{1.0, 1.0, 1.0, 1.0, 1.0, -1.0, -1.0, 1.0};
     private:
 
     bool is_running = true;
